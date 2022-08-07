@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, {  useState } from "react";
 import { Button, Container } from "reactstrap";
 import "./home.css";
 import Register from "../register/register";
@@ -9,11 +9,11 @@ const Home = () => {
     return(
         <Container fluid className="hero-container">
             <div>
-                <h2>This is random head</h2>
+                <h2>User Mangement</h2>
             </div>
             <div className="buttons-container">
-                <Button color="primary" size="lg" onClick={()=> setRegisterSelected(true)}>Register</Button>
-                <Button color="success" size="lg" onClick={()=> setRegisterSelected(false)}>Users List</Button>
+                <Button color="primary" outline={!isRegisterSelected} disabled={isRegisterSelected}  size="lg" onClick={()=> setRegisterSelected(true)}>Register</Button>
+                <Button color="success" outline={isRegisterSelected} disabled={!isRegisterSelected} size="lg" onClick={()=> setRegisterSelected(false)}>Users List</Button>
             </div>
             <div>
                 {isRegisterSelected ? <Register /> : <Users />}

@@ -7,6 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Register = () => {
     const [user, setUser] = useState({id: v4()});
     const {dispatch} = useContext(AuthContext);
+   
     const registerUser = (event) => {
         event.preventDefault();
         dispatch({type: REGISTER_USER, payload: user});
